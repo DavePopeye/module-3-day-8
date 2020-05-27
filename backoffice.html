@@ -1,5 +1,11 @@
 <!doctype html>
 <html lang="en">
+<style>
+    body {
+        background: rgb(114, 160, 193);
+        background: radial-gradient(circle, rgba(114, 160, 193, 1) 9%, rgba(255, 255, 255, 1) 50%);
+    }
+</style>
 
 <head>
     <meta charset="utf-8">
@@ -13,9 +19,55 @@
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="./mod3-day8.html">Home</a>
+                <a class="nav-item nav-link" href="#">Backoffice <span class="sr-only">(current)</span></a>
+            </div>
+        </div>
+    </nav>
     <div class="container text-center">
-
+        <h1>BACKOFFICE</h1>
+        <h2 class="mt-5">Insert new products</h2>
+        <div class="row">
+            <div class="col col-4 offset-4">
+                <form onsubmit="prodSubmit()">
+                    <div class="form-group">
+                        <label for="name">Product name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Insert here the product name" />
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Product description</label>
+                        <input type="text" class="form-control" id="description"
+                            placeholder="Insert here the product description" />
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Product brand</label>
+                        <input type="text" class="form-control" id="brand"
+                            placeholder="Insert here the product brand" />
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Product image</label>
+                        <input type="text" class="form-control" id="imageUrl"
+                            placeholder="Insert here the product imageUrl" />
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Product price</label>
+                        <input type="number" class="form-control" id="price"
+                            placeholder="Insert here the product price" />
+                    </div>
+                    <div class="form-group">
+                        <button type="button" class="btn btn-dark">Submit Product</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -28,6 +80,22 @@
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
     <script src="helper.js"></script>
+    <script>
+        prodSubmit = () => {
+            event.preventDefault();
+            submitProduct();
+        }
+
+        submitProduct = () => {
+            let myProduct = {
+                name: document.querySelector('#name').value,
+                descritpion: document.querySelector('#description').value,
+                brand: document.querySelector('#brand').value,
+                price: document.querySelector('#price').value,
+            }
+
+        }
+    </script>
 </body>
 
 </html>
